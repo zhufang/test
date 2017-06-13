@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 283px;
+            overflow: hidden;
+            margin: 100px auto;
+        }
+        .d1{
+            display: none;
+            width: 200px;
+            height: 70px;
+            background: pink;
+            border-radius: 10px;
+            margin-top:1px;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .move {
+            display: block;
+            transition: 1s;
+            -webkit-animation: move 1.5s  linear 1;
+            animation: move 1.5s linear 1;
+        }
+        @keyframes move {
+            0%{
+
+                transform: rotateX(-180deg);
+            }
+            100%{
+                transform: rotateX(0deg);
+            }
+        }
+
+        .margin_top{
+            margin-top: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="d1">
+
+    </div>
+    <div class="d1">
+
+    </div>
+    <div class="d1">
+
+    </div>
+    <div class="d1">
+
+    </div>
+</div>
+<script>
+
+window.setTimeout(function () {
+    var $oD=$(".d1");
+    for(var i=0;i<$oD.length;i++){
+        /*$oD[i].className='d1 move';*/
+            $oD[0].className='d1 move';
+        var b=setInterval(function () {
+            $oD[1].className='d1 move';
+        },1000);
+        var c=setInterval(function () {
+            $oD[2].className='d1 move';
+        },2000);
+        var d=setInterval(function () {
+            $oD[3].className='d1 move';
+        },3000);
+        console.log(i);
+    }
+}, 1000);
+
+
+
+    //记录字符出现的次数
+    /*var str="fffffhhkkkkkkmrrrwwwxzzzzz";
+    var obj={};
+    for(var i=0;i<str.length;i++){
+        var v=str.charAt(i);//根据索引找下标；
+        //console.log(v);
+        if(obj[v]&&obj[v].value==v){
+            obj[v].count=++obj[v].count;
+        }else{
+            obj[v]={};//对象
+            obj[v].count=1;//添加属性名为count,count的值为1；--count也为会变得量
+            obj[v].value=v;//添加属性名为value;value的值为字符串中的字符 ；--v为会变得量
+            console.log(obj[v]);
+        }
+    }
+    for(key in obj){
+        document.write(obj[key].value+'='+obj[key].count+'');
+    }*/
+    //功能：记录每个字符在字符串中出现了几次，
+
+</script>
+</body>
+</html>
